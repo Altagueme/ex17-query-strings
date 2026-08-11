@@ -6,4 +6,9 @@ const app = express();
 //     /busca?q=js&pagina=2   → { "q": "js", "pagina": "2" }
 //     /busca (sem parâmetros) → { "q": "" }
 
+app.get ("/", (req, res) => {
+    const pesquisa = req.query.q
+    res.send(JSON.stringify(pesquisa))
+})
+
 app.listen(3000, () => console.log('Servidor rodando em http://localhost:3000'));
